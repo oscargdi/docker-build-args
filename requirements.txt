@@ -1,0 +1,2 @@
+-i https://pypi.org/simple
+python-decouple==3.8
