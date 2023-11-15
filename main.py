@@ -1,3 +1,3 @@
 from decouple import config
 
-print(config('GREETING'))
+print(f"Current build is '{config("BUILD")}'")

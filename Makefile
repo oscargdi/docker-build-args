@@ -1,12 +1,12 @@
-DOCKER_IMAGE_TAG = docker-build-args
+BUILD = $(shell git log -1 --pretty=format:"%H")
 
 .PHONY: build
 build:
-	docker build --build-arg BUILD_GREETING="Hello world!" -t ${DOCKER_IMAGE_TAG} .
+	docker build --no-cache -t application-${BUILD} --build-arg BUILD=${BUILD} .
 
 .PHONY: run
 run:
-	docker run --rm ${DOCKER_IMAGE_TAG}
+	docker run --rm application-${BUILD}
 
 .PHONY: start
 start: build run

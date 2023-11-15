@@ -1,7 +1,7 @@
 FROM python:3.12
 
-ARG BUILD_GREETING
-ENV GREETING=${BUILD_GREETING}
+ARG BUILD
+ENV BUILD=${BUILD}
 
 ADD . .
 RUN pip install -r requirements.txt
